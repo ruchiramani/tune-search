@@ -1,0 +1,16 @@
+<%= form_tag("/search/general", method: "post") do %>
+  <%= label_tag(:q, " General search:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+<%= form_tag("/search/terms", method: "post") do %>
+  <%= label_tag(:artist, "Artist:") %>
+  <%= text_field_tag(:artist) %>
+  <%= label_tag(:song, "Song:") %>
+  <%= text_field_tag(:song) %>
+  <%= label_tag(:album, "Album:") %>
+  <%= text_field_tag(:album) %>
+  <%= submit_tag("Search") %>
+<% end %>
