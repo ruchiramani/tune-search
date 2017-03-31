@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: "search#new"
   resources :search, :artists, :songs, :albums
   post '/search/general', to: 'search#general'
-  post '/search/term', to: 'search#term'
+  post '/search/terms', to: 'search#terms'
 
 end

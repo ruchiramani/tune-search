@@ -1,10 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-artist = Artist.create(name: 'drake')
-album = Album.create(name: "views", artist_id: artist.id)
-song = Song.create(name: 'hotline bling', artist_id: artist.id, album_id: album.id)
+
+artists = ['Drake', 'Adele', 'Coldplay', 'Khalid','Future','Calvin Harris', 'Katy Perry','Nicky Jam', 'U2','Wolfmother','Kygo','Justin Bieber','DNCE','Sia','Rihanna']
+
+artists.each do |artist|
+   artist_info = RSpotify::Artist.search(artist).first
+   new_artist = Artist.find_or_create_by(name: artist_info.name)
+   artist_albums = artist_info.albums
+   artist_albums.each do |album|
+     new_album = Album.find_or_create_by(name: album.name, artist_id: new_artist.id)
+       album.tracks.each do |song|
+         new_song = Song.find_or_create_by(name: song.name,artist_id: new_artist.id, album_id: new_album.id)
+       end
+     end
+  end

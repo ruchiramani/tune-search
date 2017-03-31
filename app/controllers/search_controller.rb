@@ -1,14 +1,12 @@
 class SearchController < ApplicationController
 
-  def general
-    # call seach function here
-     byebug
-
+  def create
+    if params[:q]
+      @songs = SearchService.new(params[:q]).general_search
+    else
+      @songs = SearchService.new(params).term_search
+    end
+    @songs
   end
-
-  def terms
-  end 
-
-
 
 end
