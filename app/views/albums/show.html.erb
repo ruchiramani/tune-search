@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 centered">
+      <h1 ><%= @album.name %></h1>
+      <h5> Artist: <%= link_to(@album.artist) do %><%= @album.artist.name %> <% end %></h5>
+      <h5> Popularity: <%= @album_spotify_info.popularity %> </h5>
+      <h5> Release Date: <%= @album_spotify_info.release_date%> </h5>
+      <img src="<%= @album_spotify_info.images[1]['url'] %>">
+    </div>
+    <div class="col-md-6 centered">
+      <h3> Album's tracks </h3>
+      <ul class='list-group'>
+        <% @album_spotify_info.tracks_cache.each do |song| %>
+        <li class='list-group-item'> <%= song.name %> </li>
+        <% end %>
+    </div>
+
+  </div>
+</div>

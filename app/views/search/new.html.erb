@@ -1,32 +1,31 @@
-<div class="container-fluid">
-  <div class='row'>
+  <div class="container-fluid">
+    <div class='row'>
+      <div class="col-lg-6">
+      </br>
+      <%= form_tag("/search", method: "post",:remote => true, :class => 'search-form') do %>
+      <fieldset>
+        <%= label_tag(:q, " General search:", class: "col-lg-2 control-label") %>
+        <%= text_field_tag :q%>
+        <%= submit_tag("Search") %>
+        <% end %>
+      </fieldset>
+    </div>
+
     <div class="col-lg-6">
     </br>
-    <%= form_tag("/search", method: "post",:remote => true, :class => 'search-form') do %>
-    <fieldset>
-      <%= label_tag(:q, " General search:", class: "col-lg-2 control-label") %>
-      <%= text_field_tag :q%>
+     <%= form_tag("/search", method: "post", :remote => true, :class => 'search-form') do %>
+     <fieldset>
+      <%= label_tag(:artist, "Artist:") %>
+      <%= text_field_tag(:artist) %>
+      <%= label_tag(:song, "Song:") %>
+      <%= text_field_tag(:song) %>
+      <%= label_tag(:album, "Album:") %>
+      <%= text_field_tag(:album) %>
       <%= submit_tag("Search") %>
       <% end %>
     </fieldset>
+   </div>
+   </div>
   </div>
-
-  <div class="col-lg-6">
-  </br>
-  <%= form_tag("/search", method: "post", :remote => true, :class => 'search-form') do %>
-  <fieldset>
-    <%= label_tag(:artist, "Artist:") %>
-    <%= text_field_tag(:artist) %>
-    <%= label_tag(:song, "Song:") %>
-    <%= text_field_tag(:song) %>
-    <%= label_tag(:album, "Album:") %>
-    <%= text_field_tag(:album) %>
-    <%= submit_tag("Search") %>
-    <% end %>
-  </fieldset>
-</div>
-</div>
-</div>
-<div id="results" class='row'>
-</div>
-</div>
+  <div id="results" class='row'>
+  </div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 centered">
+      <h1 ><%= @artist.name %></h1>
+      <h5> Popularity: <%= @artist_spotify_info.popularity %> </h5>
+      <img src="<%= @artist_spotify_info.images[2]['url'] %>">
+    </div>
+    <div class="col-md-6 centered">
+      <h3> <%= @artist.name%>'s top tracks </h3>
+      <ul class='list-group'>
+        <% @artist_spotify_info.top_tracks('US').each do |song| %>
+        <li class='list-group-item'> <%= song.name %> </li>
+        <% end %>
+    </div>
+  </div>
+</div>
