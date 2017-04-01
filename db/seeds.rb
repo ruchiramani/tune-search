@@ -1,5 +1,5 @@
 
-artists = ['Drake', 'Adele', 'Coldplay', 'Khalid','Future','Calvin Harris', 'Katy Perry','Nicky Jam', 'U2','Wolfmother','Kygo','Justin Bieber','DNCE','Sia','Rihanna']
+artists = ['Drake']
 
 artists.each do |artist|
   artist_info = RSpotify::Artist.search(artist).first
