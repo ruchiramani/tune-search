@@ -38,6 +38,11 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rails-controller-testing'
+  gem "capybara"
+  gem "capybara-webkit"
+  gem "database_cleaner"
+  gem 'selenium-webdriver'
   gem 'pry'
   gem 'byebug', platform: :mri
 end

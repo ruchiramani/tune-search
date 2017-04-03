@@ -1,11 +1,11 @@
 <div class="panel panel-info">
-<div class="panel-heading">
-  <h1 ><%= @song.name %></h1>
-</div>
-<div class="panel-body">
-  <h4>   Artist: <%= link_to(@song.artist) do %> <%= @song.artist.name %><% end %></h3>
-  <h4>  Album: <%= link_to(@song.album) do %> <%= @song.album.name %><% end %></h3>
-  <h4>  Duration: <%= @song_spotify_info.duration_ms %> </h4>
-  <h4>  Popularity: <%= @song_spotify_info.popularity %></h4>
+ <div class="panel-heading">
+    <h1 ><%= @song.name %></h1>
+ </div>
+   <div class="panel-body">
+    <h4>   Artist: <%= link_to(@song.artist, :id=> "artist") do %> <%= @song.artist.name %><% end %></h3>
+    <h4>  Album: <%= link_to(@song.album, :id=> "album") do %> <%= @song.album.name %><% end %></h3>
+    <h4>  Duration: <%= @song_spotify_info.duration_ms %> </h4>
+    <h4>  Popularity: <%= @song_spotify_info.popularity %></h4>
  </div>
 </div>
