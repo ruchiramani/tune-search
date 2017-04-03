@@ -1,4 +1,5 @@
 class Song < ApplicationRecord
+  validates :name, presence: true
   belongs_to :album
   belongs_to :artist
   scope :search_by_artist, -> (artist){ joins(:artist).where('artists.name COLLATE utf8_general_ci LIKE ?', artist.strip).includes(:artist, :album) }
