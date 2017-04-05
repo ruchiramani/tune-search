@@ -1,5 +1,5 @@
-<% if !@songs %>
-<h3> Sorry nothing found </h3>
+<% if @songs.empty? %>
+   <h3 align='center'> Sorry nothing found </h3>
 <% else %>
 <table class="table table-striped table-hover ">
 <thead>
